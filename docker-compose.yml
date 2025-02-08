@@ -80,12 +80,6 @@ services:
       - "--certificatesresolvers.letsencrypt.acme.email=${TRAEFIK_ACME_EMAIL}"
       # The file where ACME certificates are stored inside the container
       - "--certificatesresolvers.letsencrypt.acme.storage=/etc/traefik/acme/acme.json"
-      # Enable Prometheus metrics
-      - "--metrics.prometheus=true"
-      # Configure Prometheus histogram buckets
-      - "--metrics.prometheus.buckets=0.1,0.3,1.2,5.0"
-      # Check for newer Traefik versions and optionally log that info
-      - "--global.checknewversion=true"
       # Disable sending anonymous usage data to the Traefik maintainers
       - "--global.sendanonymoususage=false"
     volumes:
